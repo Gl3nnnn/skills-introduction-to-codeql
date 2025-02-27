@@ -13,13 +13,17 @@ def index():
 
     if name:
         cursor.execute(
+
          "SELECT * FROM books WHERE name LIKE '%" + name + "%'"
+> main
         )
         books = [Book(*row) for row in cursor]
 
     elif author:
         cursor.execute(
+
             "SELECT * FROM books WHERE author LIKE %s", author
+ main
         )
         books = [Book(*row) for row in cursor]
 
